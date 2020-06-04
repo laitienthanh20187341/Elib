@@ -1,0 +1,42 @@
+extends ../layouts/common
+block content
+	if errors
+		each error in errors
+			.alert.alert-danger= error
+	h2.text-center Create Readers
+	.container.mt-3
+		form(action="/readers/createReader", method="POST")
+			.form-group.col-md-6
+				label Mật Khẩu
+				input.form-control(name='password', type='password', maxlength='100', value=values ? values.password : "")
+
+			.form-group.col-md-6
+				label Tên
+				input.form-control(name='nameUser', type='text', maxlength='100', value=values ? values.nameUser : "")
+
+			.form-group.col-md-6
+				label Ngày Sinh
+				input.form-control(name='dateOfBirth', type='date', maxlength='100', value=values ? values.dateOfBirth : "")
+
+			.form-group.col-md-6
+				label Giới Tính
+				input.form-control(name='gender', type='text', maxlength='100', value=values ? values.gender : "")
+
+			.form-group.col-md-6
+				label Số Điện Thoại 
+				input.form-control(name='phone', type='number', maxlength='100', value=values ? values.phone : "")
+
+			.form-group.col-md-6
+				label Địa Chỉ
+				input.form-control(name='address', type='text', maxlength='100', value=values ? values.address : "")
+
+			.form-group.col-md-6
+				label Email
+				input.form-control(name='email', type='text', maxlength='100', value=values ? values.datein : "")
+			.form-group.col-md-6
+				label Thời gian thẻ(theo quý 1 quý = 3 tháng)
+				input.form-control(name='numbers', type='numbers', maxlength='100', value=values ? values.numbers : "")
+
+				br
+
+				button.btn.btn-primary(type='submit') Add Reader

@@ -1,0 +1,29 @@
+extends ../layouts/common
+block content
+ .container.mt-3
+  h3.text-center Edit Information Book
+  form(method='POST')
+
+    .form-group
+    label(for='name') Tên Sách
+    input.form-control.col-md-6(type='text', name='name', value=books ? books[0].name : "")
+
+    label(for='id') Id
+    input.form-control.col-md-6(type='text', name='id', value=books ? books[0].id : "")
+
+    label(for='author') Tác Giả 
+    input.form-control.col-md-6(type='text', name='author', value=books ? books[0].author : "")
+
+    label(for='publishingYear') Năm Sản Xuất
+    input.form-control.col-md-6(type='text', name='publishingYear', value=books ? books[0].publishingYear : "")
+
+    label(for='kind') Thể Loại
+    input.form-control.col-md-6(type='text', name='kind', value=books ? books[0].kind : "")
+
+    label(for='address') Địa Chỉ
+    input.form-control.col-md-6(type='text', name='address', value=books ? books[0].address : "")
+
+    label(for='NXB') Nhà Xuất Bản
+    input.form-control.col-md-6(type='text', name='NXB', value=books ? books[0].NXB : "")
+    br
+    button.btn.btn-primary Submit

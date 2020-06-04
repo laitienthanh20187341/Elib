@@ -1,0 +1,39 @@
+extends ../layouts/common
+block content
+	if errors
+		each error in errors
+			.alert.alert-danger= error
+	h2.text-center Tạo Sách Mới
+	.container.mt-3
+		form(action="/books/createBook", method="POST")
+			.form-group.col-md-6
+				label Tên Sách
+				input.form-control(name='name', type='text', maxlength='100', value=values ? values.name : "")
+
+			.form-group.col-md-6
+				label Id
+				input.form-control(name='id', type='text', maxlength='100', value=values ? values.id : "")
+
+			.form-group.col-md-6
+				label Tác Giả
+				input.form-control(name='author', type='text', maxlength='100', value=values ? values.author : "")
+
+			.form-group.col-md-6
+				label Năm xuất bản
+				input.form-control(name='publishingYear', type='text', maxlength='100', value=values ? values.publishingYear : "")
+
+			.form-group.col-md-6
+				label Thể Loại
+				input.form-control(name='kind', type='text', maxlength='100', value=values ? values.kind : "")
+
+			.form-group.col-md-6
+				label Địa Chỉ Cuốn Sách(Trong thư viện)
+				input.form-control(name='address', type='text', maxlength='100', value=values ? values.address : "")
+
+			.form-group.col-md-6
+				label Nhà Xuất Bản
+				input.form-control(name='NXB', type='text', maxlength='100', value=values ? values.NXB : "")
+
+				br
+
+				button.btn.btn-primary(type='submit') Add Book
